@@ -1,0 +1,28 @@
+Feature: book an appointment with a doctor
+
+As a patient
+I want to book an appointment from the selected doctor
+So that I can get a checkup
+
+Background: doctors have been added to the database
+
+Given the following doctors exist:
+  | Name                    | Specialization 	| Location    |
+  | Aladdin                 | Cardiac surgeon   | Defence     |
+  | The Terminator          | Dentist           | Johar Town  |
+  | Harry                   | Physiotherapist   | EME         |
+
+And I am on OnlineAppointments homepage
+
+Scenario: go to book_appointment page
+
+When I follow 'Aladdin'
+Then I should be on book_appointment page
+And I should see 'Aladdin'
+
+Scenario: book an appointment
+
+Given I am on book_appointment page
+When I press 'book_appointment'
+Then I should see 'appointment booked with Aladdin'
+And I should be on OnlineAppointments home page
