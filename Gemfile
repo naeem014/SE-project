@@ -41,6 +41,7 @@ gem 'haml'
 # gem 'debugger'
 # add to end of Gemfile
 group :test, :development do
+  gem 'rspec-rails'
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions  
   gem 'database_cleaner' # to clear Cucumber's test database between runs
