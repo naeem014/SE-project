@@ -1,0 +1,15 @@
+-# This file is app/views/doctors/index.html.haml
+%h1 Doctors Information
+
+%table#doctors
+  %thead
+    %tr
+      %th Name
+      %th Specialization
+      %th Location
+  %tbody
+    - @doctors.each do |doc|
+      %tr
+        %td= doc.Name
+        %td= doc.Specialization
+        %td= doc.Location

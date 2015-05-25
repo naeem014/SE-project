@@ -11,3 +11,77 @@
  *= require_self
  *= require_tree .
  */
+html, body {
+	margin: 0;
+	padding: 0;
+	background: Black;
+	color: Wheat;
+	font-family: Tahoma, Verdana, sans-serif;
+	font-size: 12pt;
+}
+
+div#main {
+	margin: 0;
+	padding: 0 40px 40px;
+}
+
+a {
+	background: transparent;
+	color: green;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+h1 {
+	color: Black;
+	font-size: 150%;
+	font-style: italic;
+	display: block;
+	width: 100%;
+	border-bottom: 1px solid Grey;
+}
+
+h1.title {
+	margin: 0 0 1em;
+	padding: 10px;
+	background-color: Black;
+	color: Wheat;
+	border-bottom: 4px solid Gold;
+	font-size: 2em;
+	font-style: normal;
+}
+
+table#doctors {
+	margin: 10px;
+	border-collapse: collapse;
+	width: 100%;
+	border-bottom: 2px solid Gold;
+}
+
+table#doctors th {
+	border: 2px solid Gold;
+	font-weight: bold;
+	padding: 4px;
+	text-align: left;
+	background-color: Brown;
+}
+
+table#doctors td { 
+	padding: 4px;
+	text-align: left;
+}
+
+#notice, #warning {
+	background: Black;
+	margin: 1em 0;
+	padding: 4px;
+}
+
+form label {
+	display: block;
+	line-height: 25px;
+	font-weight: bold;
+	color: Wheat;
+}
+
+

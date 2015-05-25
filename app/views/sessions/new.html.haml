@@ -1,0 +1,13 @@
+-# This file is app/views/session/new.html.haml
+
+%h1= "Log in"
+
+= form_tag sessions_path do
+	= label_tag :email, 'email'
+	= text_field_tag :email
+	
+	= label :password, 'password'
+	= text_field_tag :password_digest
+
+	= submit_tag 'Log In'
+

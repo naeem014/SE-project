@@ -1,0 +1,16 @@
+-# edit.html.haml using partial
+
+%h1 Edit Your Profile
+
+= form_tag doctor_path(@doc), :method => :put do
+
+  = label :doctor, :Name, 'Name'
+  = text_field :doctor, 'Name'
+
+  = label :doctor, :Specialization, 'Specialization'
+  = text_field :doctor, 'Specialization'
+
+  = label :doctor, :Location, 'Location'
+  = text_field :doctor, 'Location'
+
+  = submit_tag 'Update Profile Info'

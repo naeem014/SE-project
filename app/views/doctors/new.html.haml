@@ -1,0 +1,20 @@
+-# This file is app/views/doctors/new.html.haml
+%h1= "Sign up"
+
+= form_tag '/doctors', :method => :post do
+	= label :doctor, :Name, 'Name'
+	= text_field :doctor, 'Name'
+
+	= label :doctor, :Specialization, 'Specialization'
+	= text_field :doctor, 'Specialization'
+	
+	= label :doctor, :Location, 'Location'
+	= text_field :doctor, 'Location'
+	
+	= label :doctor, :email, 'email'
+	= text_field :doctor, 'email'
+	
+	= label :doctor, :password_digest, 'password'
+	= text_field :doctor, 'password_digest'
+
+	= submit_tag 'Sign up'

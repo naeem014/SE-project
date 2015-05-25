@@ -22,8 +22,11 @@ end
 
 gem 'jquery-rails'
 
+# use Haml for templates
+gem 'haml'
+
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
@@ -38,7 +41,7 @@ gem 'jquery-rails'
 # gem 'debugger'
 # add to end of Gemfile
 group :test, :development do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions  
   gem 'database_cleaner' # to clear Cucumber's test database between runs
   gem 'capybara'         # lets Cucumber pretend to be a web browser

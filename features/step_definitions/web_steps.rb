@@ -42,15 +42,15 @@ When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
 end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
-  #visit path_to(page_name)
+  visit path_to(page_name)
 end
 
 When /^(?:|I )go to (.+)$/ do |page_name|
-  #visit path_to(page_name)
+  visit path_to(page_name)
 end
 
 When /^(?:|I )press "([^"]*)"$/ do |button|
-  #click_button(button)
+  click_button(button)
 end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
@@ -58,11 +58,13 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
-  #fill_in(field, :with => value)
+  fill_in(field, :with => value)
+  #element = page.find_field(field)
+  #element.set(value)
 end
 
 When /^(?:|I )fill in "([^"]*)" for "([^"]*)"$/ do |value, field|
-  #fill_in(field, :with => value)
+  fill_in(field, :with => value)
 end
 
 # Use this to fill in an entire form with data from a table. Example:
@@ -104,39 +106,42 @@ end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
   if page.respond_to? :should
-    #page.should have_content(text)
+    page.should have_content(text)
   else
-    #assert page.has_content?(text)
+    assert page.has_content?(text)
   end
 end
 
 Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
-  #regexp = Regexp.new(regexp)
+  regexp = Regexp.new(regexp)
 
   if page.respond_to? :should
-    #page.should have_xpath('//*', :text => regexp)
+    page.should have_xpath('//*', :text => regexp)
   else
-    #assert page.has_xpath?('//*', :text => regexp)
+    assert page.has_xpath?('//*', :text => regexp)
   end
 end
 
 Then /^(?:|I )should not see "([^"]*)"$/ do |text|
   if page.respond_to? :should
-    #page.should have_no_content(text)
+    page.should have_no_content(text)
   else
-    #assert page.has_no_content?(text)
+    assert page.has_no_content?(text)
   end
 end
 
 Then /^(?:|I )should not see \/([^\/]*)\/$/ do |regexp|
-  #regexp = Regexp.new(regexp)
+  regexp = Regexp.new(regexp)
 
   if page.respond_to? :should
-    #page.should have_no_xpath('//*', :text => regexp)
+    page.should have_no_xpath('//*', :text => regexp)
   else
-    #assert page.has_no_xpath?('//*', :text => regexp)
+    assert page.has_no_xpath?('//*', :text => regexp)
   end
 end
+
+
+
 
 Then /^the "([^"]*)" field(?: within (.*))? should contain "([^"]*)"$/ do |field, parent, value|
   with_scope(parent) do

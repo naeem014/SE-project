@@ -1,0 +1,23 @@
+!!! 5
+%html
+  %head
+    %title Online Appointments!
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+
+  %body
+    %h1.title Online Appointments!
+    - if current_doc
+      %h4= "Logged in as #{current_doc.email}"
+      %h4= link_to "Log out", sessions_path, method: :delete
+    - else  
+      %h4= link_to "Doctors Sign Up", new_doctor_path
+      %h4= link_to "Doctors Log In", new_session_path 
+    #main
+      - if flash[:notice]
+        #notice.message= flash[:notice]
+      - elsif flash[:warning]
+        #warning.message= flash[:warning]
+
+      = yield

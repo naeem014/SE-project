@@ -1,0 +1,16 @@
+-# in app/views/doctors/show.html.haml
+
+%h2 'Your Profile!'
+
+%ul#details
+  %li
+    Name:
+    = @doc.Name
+  %li
+    Specialization:
+    = @doc.Specialization
+  %li
+    Location:
+    = @doc.Location  
+
+= link_to 'Edit profile', edit_doctor_path(@doc)

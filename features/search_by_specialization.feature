@@ -11,14 +11,14 @@ Given the following doctors exist:
   | The Terminator          | Dentist           | Johar Town  |
   | Harry                   | Physiotherapist   | EME         |
   
-And I am on OnlineAppointmets home page
+And I am on the OnlineAppointments home page
 
 Scenario: search movies filtered by specialization
 
-When I fill in 'Dentist'
-And I press 'search'
-Then I should see 'The Terminator'
-But I should not see 'Harry'
+When I fill in "Specialization" with "Dentist"
+And I press "Search Specialization"
+Then I should see "The Terminator"
+But I should not see "Harry"
 
 
 

@@ -1,0 +1,28 @@
+-# This file is app/views/doctors/index.html.haml
+%h1= link_to "Doctors Information", controller= "doctors", action: "index" 
+
+%table#doctors
+  %thead
+    %tr
+      %th Name
+      %th Specialization
+      %th Location
+  %tbody
+    - if @doctors != nil
+      - @doctors.each do |doc|
+        %tr
+          %td= doc.Name
+          %td= doc.Specialization
+          %td= doc.Location
+
+= form_tag doctors_path, :method => :get do
+  = label_tag 'Search by Specialization'
+  = text_field_tag 'Specialization'
+
+  = submit_tag 'Search Specialization'
+
+= form_tag doctors_path, :method => :get do
+  = label_tag 'Search by Location'
+  = text_field_tag 'Location'
+
+  = submit_tag 'Search Location'      
